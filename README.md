@@ -1,5 +1,5 @@
 
-<img src="https://user-images.githubusercontent.com/88886207/210164822-12078925-48d5-4307-906f-b44584172fca.png" alt="banner" height="200">
+<img src="https://user-images.githubusercontent.com/88886207/210164822-12078925-48d5-4307-906f-b44584172fca.png" alt="banner" >
 
 # Snippets
 
