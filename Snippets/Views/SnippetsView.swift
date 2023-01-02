@@ -13,6 +13,30 @@ struct SnippetsView: View {
 
     var body: some View {
         NavigationStack{
+            //Category scroll view picker
+            ScrollView(.horizontal, showsIndicators: false){
+                HStack{
+                    ForEach(Category.allCases){ category in
+                        Button(action: {
+                            articleNewsVM.fetchTaskToken = FetchTaskToken(category: category, token: Date())
+                        }, label: {
+                            Text(category.text)
+                                .font(.headline)
+                                .foregroundColor(.accentColor)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 16)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(Color.accentColor.opacity(0.1))
+                                        .opacity(articleNewsVM.fetchTaskToken.category == category ? 1 : 0)
+                                )
+                        })
+                    }
+                }
+                .padding(.horizontal, 8)
+            }
+            .padding(.leading, 8)
+            
             ArticleListView(article: articles)
                 .overlay(overlayView)
                 .task(id: articleNewsVM.fetchTaskToken, loadTask)

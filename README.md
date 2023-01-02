@@ -7,4 +7,3 @@
 
 ## Caveats
 The snippets app uses asynchronous functions to support web feed fetching. While the concurrency models are introduced in Swift 5.7 and iOS15, but with a host of new features like `NavigationStacks` and `Resizebale Sheets`, the app only supports iOS16 and upwards.
-
